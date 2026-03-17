@@ -1,0 +1,18 @@
+{
+  "metadata": {"name": "bad-pod", "namespace": "default"},
+  "spec": {
+    "hostNetwork": true,
+    "hostPID": true,
+    "containers": [
+      {
+        "name": "app",
+        "image": "nginx:latest",
+        "securityContext": {
+          "privileged": true,
+          "allowPrivilegeEscalation": true,
+          "capabilities": {"add": ["SYS_ADMIN", "NET_ADMIN"]}
+        }
+      }
+    ]
+  }
+}

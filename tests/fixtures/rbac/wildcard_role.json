@@ -1,0 +1,11 @@
+{
+  "kind": "ClusterRole",
+  "metadata": {"name": "overprivileged-role"},
+  "rules": [
+    {
+      "apiGroups": ["*"],
+      "resources": ["*"],
+      "verbs": ["*"]
+    }
+  ]
+}

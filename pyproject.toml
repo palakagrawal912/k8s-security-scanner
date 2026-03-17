@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "k8s-security-scanner"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "kubernetes>=28.1.0",
+    "rich>=13.0.0",
+    "typer>=0.12.0",
+    "pydantic>=2.0.0",
+    "PyYAML>=6.0",
+]
+
+[project.scripts]
+k8s-scan = "scanner.cli:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

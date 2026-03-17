@@ -1,0 +1,11 @@
+{
+  "kind": "Role",
+  "metadata": {"name": "pod-reader", "namespace": "default"},
+  "rules": [
+    {
+      "apiGroups": [""],
+      "resources": ["pods"],
+      "verbs": ["get", "list", "watch"]
+    }
+  ]
+}

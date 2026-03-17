@@ -1,0 +1,8 @@
+{
+  "kind": "ClusterRoleBinding",
+  "metadata": {"name": "dev-admin-binding"},
+  "roleRef": {"apiGroup": "rbac.authorization.k8s.io", "kind": "ClusterRole", "name": "cluster-admin"},
+  "subjects": [
+    {"kind": "User", "name": "alice", "apiGroup": "rbac.authorization.k8s.io"}
+  ]
+}

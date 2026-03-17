@@ -1,0 +1,27 @@
+{
+  "metadata": {"name": "good-pod", "namespace": "default"},
+  "spec": {
+    "securityContext": {
+      "runAsNonRoot": true,
+      "seccompProfile": {"type": "RuntimeDefault"}
+    },
+    "containers": [
+      {
+        "name": "app",
+        "image": "nginx:1.25.3",
+        "securityContext": {
+          "privileged": false,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "runAsNonRoot": true,
+          "seccompProfile": {"type": "RuntimeDefault"},
+          "capabilities": {"drop": ["ALL"]}
+        },
+        "resources": {
+          "limits": {"cpu": "500m", "memory": "128Mi"},
+          "requests": {"cpu": "100m", "memory": "64Mi"}
+        }
+      }
+    ]
+  }
+}
